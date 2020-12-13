@@ -1,0 +1,75 @@
+.inputsComponents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.searchForm {
+  background-color: white;
+  width: 40rem;
+  display: flex;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  align-items: center;
+}
+.searchForm__search {
+  background-color: white;
+  border: none;
+  padding: 0px 1rem 0rem 2rem;
+}
+.searchForm__search > * {
+  color: hsl(0, 0%, 52%);
+}
+.searchForm__input {
+  background-color: white;
+  flex: 1;
+  padding: 1rem 1rem;
+  border: none;
+  color: hsl(0, 0%, 52%);
+  /* placeholder color */
+}
+.dropdown {
+  position: relative;
+}
+.dropdown__select {
+  background-color: white;
+  padding: 1rem 2rem;
+  min-width: 17rem;
+  text-align: start;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown__list {
+  position: absolute;
+  list-style: none;
+  background-color: white;
+  width: 100%;
+  top: 40px;
+  left: 0px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding: 0.5rem 0rem;
+  display: none;
+}
+.dropdown__list--active {
+  display: block;
+}
+.dropdown__item {
+}
+.dropdown__option {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  text-align: start;
+}
+
+.dropdown__option:hover {
+  background-color: hsl(0, 0%, 90%);
+}
