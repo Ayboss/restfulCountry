@@ -6,11 +6,15 @@
 }
 .country {
   display: block;
-  color: black;
+  color: hsl(200, 15%, 8%);
   text-decoration: none;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+}
+.country.dark {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
 }
 .country__flag {
   width: 100%;

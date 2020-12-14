@@ -4,7 +4,7 @@ import Country from './Country';
 import {RegionContext} from './../context/RegionContext';
 
 function CountriesGrid() {
-    const {value, setValue} = useContext(RegionContext);
+    const {value} = useContext(RegionContext);
     const [countries, setCountries] = useState([]);
     
     useEffect(()=>{

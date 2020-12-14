@@ -2,14 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import RegionProvider from './context/RegionContext';
+import DarkProvider from './context/DarkContext';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <RegionProvider>
-      <App />
-    </RegionProvider>
+    <DarkProvider>
+      <RegionProvider>
+        <App />
+      </RegionProvider>
+    </DarkProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

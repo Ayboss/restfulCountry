@@ -11,8 +11,21 @@ html {
 }
 body {
   font-family: "Nunito Sans", sans-serif;
+}
+.app {
+  min-width: 100vw;
+  min-height: 100vh;
   background-color: hsl(0, 0%, 98%);
+}
+.app.dark {
+  background-color: hsl(207, 26%, 17%);
 }
 .app__main {
   padding: 4rem 5rem;
+}
+
+@media (max-width: 389px) {
+  .app__main {
+    padding: 4rem 2rem;
+  }
 }

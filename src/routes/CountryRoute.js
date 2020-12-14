@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import {DarkContext} from './../context/DarkContext';
 import {Link, useParams} from 'react-router-dom';
 import axios from 'axios';
 import '../countryroute.css';
 
 function CountryRoute() {
+    const {dark} = useContext(DarkContext);
     const {name} = useParams();
     const [country, setCountry] = useState({})
     useEffect(()=>{
@@ -16,17 +18,17 @@ function CountryRoute() {
             console.log(response.data);
             setCountry(response.data[0]);
         }catch(err){
-            console.log(err.response);
+            console.log(err.response); 
         }
     
     }
 
     return (
         <div>
-            <Link to="/" className="backbutton"><ion-icon name="arrow-back-outline"></ion-icon>Back</Link>
+            <Link to="/" className={`backbutton ${dark && 'dark'}`}><ion-icon name="arrow-back-outline"></ion-icon>Back</Link>
             <div className="countrySingle">
                 <img className="countrySingle__image" src={country.flag} alt={country.name}/>
-                <div className="countrySingle__details">
+                <div className={`countrySingle__details ${dark && 'dark'}`}>
                     <h2>{country.name}</h2>
                     <div className="countrySingle__info">
                         <ul>
@@ -45,9 +47,7 @@ function CountryRoute() {
                     <div className="countrySingle__border">
                         <p>Border Countries</p>
                         <ul>
-                            {country.border?.map(item=><span>{item.name}</span>)}
-                            <li>Germany</li>
-                            <li>Netherlands</li>
+                            {country.borders?.map(item=><li>{item}</li>)}
                         </ul>
                     </div>
                 </div>    
