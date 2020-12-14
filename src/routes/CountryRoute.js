@@ -14,7 +14,7 @@ function CountryRoute() {
     },[]);
     const fetchCountry = async ()=>{
         try{
-            const response = await axios.get(`https://restcountries.eu/rest/v2/name/${name}?fullText=true&fields=population;region;capital;flag;name;subregion;borders;currencies;languages`);
+            const response = await axios.get(`https://restcountries.eu/rest/v2/name/${name}?fullText=true&fields=population;region;capital;flag;name;subregion;borders;currencies;languages;nativeName;cioc`);
             console.log(response.data);
             setCountry(response.data[0]);
         }catch(err){
@@ -25,21 +25,21 @@ function CountryRoute() {
 
     return (
         <div>
-            <Link to="/" className={`backbutton ${dark && 'dark'}`}><ion-icon name="arrow-back-outline"></ion-icon>Back</Link>
+            <Link to="/" className={`backbutton ${dark && 'dark'}`}><ion-icon style={{marginRight:'10px'}} name="arrow-back-outline"></ion-icon>Back</Link>
             <div className="countrySingle">
                 <img className="countrySingle__image" src={country.flag} alt={country.name}/>
                 <div className={`countrySingle__details ${dark && 'dark'}`}>
                     <h2>{country.name}</h2>
                     <div className="countrySingle__info">
                         <ul>
-                            <li>Native Name: <span>Belgie</span></li>
+                            <li>Native Name: <span>{country.nativeName}</span></li>
                             <li>Population: <span>{country.population}</span></li>
                             <li>Region: <span>{country.region}</span></li>
                             <li>Sub Region: <span>{country.subregion}</span></li>
                             <li>Capital: <span>{country.capital}</span></li>
                         </ul>
                         <ul>
-                            <li>Top Level Domain: <span>be</span> </li>
+                            <li>Top Level Domain: <span>{country.cioc}</span> </li>
                             <li>Currencies: <span>{country.currencies?.map(item=><span>{item.name}</span>)}</span> </li>
                             <li>Languages: <span>{country.languages?.map(item=><span>{item.name}</span>)}</span> </li>
                         </ul>

@@ -10,6 +10,9 @@
   align-items: center;
   border-radius: 5px;
 }
+.backbutton__icon {
+  margin-right: 1rem;
+}
 .backbutton.dark {
   background-color: hsl(209, 23%, 22%);
   color: white;

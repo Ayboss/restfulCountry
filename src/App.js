@@ -6,7 +6,7 @@ import AllCountry from './routes/AllCountry';
 import CountryRoute from './routes/CountryRoute';
 
 function App() {
-  const  {dark, setDark} = useContext(DarkContext);
+  const  {dark} = useContext(DarkContext);
   return (
     <div className={`app ${dark && 'dark' }`}>
       <Header />

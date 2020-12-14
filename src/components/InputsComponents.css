@@ -9,6 +9,12 @@
 .inputsComponents.dark .searchForm {
   background-color: hsl(209, 23%, 22%);
 }
+.inputsComponents.dark .searchForm__search {
+  background-color: hsl(209, 23%, 22%);
+}
+.inputsComponents.dark .searchForm__search > * {
+  color: white;
+}
 .inputsComponents.dark .searchForm__input {
   background-color: hsl(209, 23%, 22%);
   color: white;
@@ -36,6 +42,9 @@
   border: none;
   color: hsl(0, 0%, 52%);
   /* placeholder color */
+}
+.searchForm__input:focus {
+  outline: none;
 }
 
 /* dark background start */
